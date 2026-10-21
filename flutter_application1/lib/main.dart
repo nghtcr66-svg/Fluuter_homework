@@ -17,8 +17,6 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Padding(
-            padding: EdgeInsetsGeometry.all(16),
             child: Center(
               child: Column(
                 children: [
@@ -60,8 +58,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-        ) 
-      )  
-    );   
+        )
+      );   
   }
 }  
