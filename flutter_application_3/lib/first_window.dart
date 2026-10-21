@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart'; // 1. Обязательный импорт
 import 'package:google_fonts/google_fonts.dart';
-
+import 'second_window.dart';
 
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  final _window_number= 1;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +18,8 @@ class HomeScreen extends StatelessWidget {
           children: [
 //-------------КАРТИНКА-------------------------------------------------            
             Padding(padding: EdgeInsetsGeometry.only(
-              left: 24.0,
-              top: 150.0
+              left: 27.0,
+              top: 163.0
             ),
             child: Image.asset("assets/1.png"),
             ),
@@ -62,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                   right: 14.0,
                 ),
                 child: TextButton(
-                  onPressed: (){},
+                  onPressed: (){runApp(Firtscreen());},
                   child: Text(
                     'skip',
                     textAlign: TextAlign.center,
@@ -71,15 +73,41 @@ class HomeScreen extends StatelessWidget {
                       color:Colors.pinkAccent, 
                       height: 1.3,
                     ).copyWith(
-                      decoration: TextDecoration.underline
+                      decoration: TextDecoration.underline,
+                      decorationColor:  Colors.pinkAccent
                     ),
                  
                 ),
                 ),
-            )] 
             ),
-        )
-      ),
-    );
+            Padding(
+              padding: EdgeInsetsGeometry.only(
+                bottom: 16.0,
+                left: 164.0,
+                right: 14.0,
+                top: 79.0
+
+              ),
+                child: Row(
+                  children: [
+                  for (int i = 1; i < 4; i++)
+                      AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        margin: const EdgeInsets.symmetric(horizontal: 6),
+                        width: _window_number == i ? 16 : 10,
+                        height:_window_number == i ? 16 : 10,
+                        decoration: BoxDecoration(
+                        color: _window_number == i ? Colors.pinkAccent : Colors.pinkAccent,
+                        shape: BoxShape.circle,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ]  
+            ),
+          )
+        ),
+      );
+    }
   }
-}
