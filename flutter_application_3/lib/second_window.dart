@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart'; // 1. Обязательный импорт
+import 'package:flutter_application_3/auto_route/auto_route.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -8,7 +9,7 @@ class FirstScreen extends StatelessWidget {
 
 
 
-  final _window_number= 2;
+  final _windowNumber= 2;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +67,7 @@ class FirstScreen extends StatelessWidget {
                   right: 14.0,
                 ),
                 child: TextButton(
-                  onPressed: (){},
+                  onPressed: (){context.router.push(ThirdRoute());},
                   child: Text(
                     'skip',
                     textAlign: TextAlign.center,
@@ -95,10 +96,10 @@ class FirstScreen extends StatelessWidget {
                       AnimatedContainer(
                         duration: const Duration(milliseconds: 250),
                         margin: const EdgeInsets.symmetric(horizontal: 6),
-                        width: _window_number == i ? 16 : 10,
-                        height:_window_number == i ? 16 : 10,
+                        width: _windowNumber == i ? 16 : 10,
+                        height:_windowNumber == i ? 16 : 10,
                         decoration: BoxDecoration(
-                        color: _window_number == i ? Colors.pinkAccent : Colors.pinkAccent,
+                        color: _windowNumber == i ? Colors.pinkAccent : Colors.pinkAccent,
                         shape: BoxShape.circle,
                         ),
                       ),

@@ -41,3 +41,19 @@ class HomeRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [ThirdScreen]
+class ThirdRoute extends PageRouteInfo<void> {
+  const ThirdRoute({List<PageRouteInfo>? children})
+    : super(ThirdRoute.name, initialChildren: children);
+
+  static const String name = 'ThirdRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return ThirdScreen();
+    },
+  );
+}
