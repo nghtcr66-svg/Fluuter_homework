@@ -1,17 +1,18 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart'; // 1. Обязательный импорт
+import 'package:flutter_application_3/auto_route/auto_route.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'second_window.dart';
 
-
+@RoutePage()
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  // const HomeScreen({super.key});
 
-  final _window_number= 1;
+  
+  final _windowNumber= 1;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-    home: Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: Column(
@@ -64,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                   right: 14.0,
                 ),
                 child: TextButton(
-                  onPressed: (){runApp(Firtscreen());},
+                  onPressed: (){context.router.push(const FirstRoute());},
                   child: Text(
                     'skip',
                     textAlign: TextAlign.center,
@@ -94,10 +95,10 @@ class HomeScreen extends StatelessWidget {
                       AnimatedContainer(
                         duration: const Duration(milliseconds: 250),
                         margin: const EdgeInsets.symmetric(horizontal: 6),
-                        width: _window_number == i ? 16 : 10,
-                        height:_window_number == i ? 16 : 10,
+                        width: _windowNumber == i ? 16 : 10,
+                        height:_windowNumber == i ? 16 : 10,
                         decoration: BoxDecoration(
-                        color: _window_number == i ? Colors.pinkAccent : Colors.pinkAccent,
+                        color: _windowNumber == i ? Colors.pinkAccent : Colors.pinkAccent,
                         shape: BoxShape.circle,
                         ),
                       ),
@@ -107,7 +108,6 @@ class HomeScreen extends StatelessWidget {
               ]  
             ),
           )
-        ),
-      );
+        );
     }
   }

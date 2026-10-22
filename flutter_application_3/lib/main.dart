@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/auto_route/auto_route.dart';
 
-import 'first_window.dart';
+void main() => runApp(MyApp());
 
-void main() {
-  runApp(HomeScreen());
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
+  final _appRouter = AppRouter();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      routerConfig: _appRouter.config(),
+    );
+  }
 }
-

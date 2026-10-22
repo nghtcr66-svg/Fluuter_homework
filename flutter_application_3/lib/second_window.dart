@@ -1,9 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart'; // 1. Обязательный импорт
 import 'package:google_fonts/google_fonts.dart';
 
 
-
-class Firtscreen extends StatelessWidget {
+@RoutePage()
+class FirstScreen extends StatelessWidget {
 
 
 
